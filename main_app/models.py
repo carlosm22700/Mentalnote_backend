@@ -10,7 +10,7 @@ class Mood(models.Model):
     EMOTIONS = [
         ('JO', 'Joy'),
         ('PE', 'Peace'),
-        ('SA', 'Satisfaction'),
+        ('ST', 'Satisfaction'),
         ('HO', 'Hope'),
         ('CO', 'Courage'),
         ('BO', 'Boredom'),
