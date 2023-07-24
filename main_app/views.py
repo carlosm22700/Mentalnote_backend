@@ -24,12 +24,12 @@ def register(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login(request):
-    username = request.data.get('username')
+    email = request.data.get('email')
     password = request.data.get('password')
-    user = User.objects.filter(username=username).first()
+    user = User.objects.filter(email=email).first()
 
     if user is None:
-        return Response({'error': 'User not found.'}, status=400)
+        return Response({'error': 'Email not found.'}, status=400)
     if not user.check_password(password):
         return Response({'error': 'Wrong password.'}, status=400)
 
